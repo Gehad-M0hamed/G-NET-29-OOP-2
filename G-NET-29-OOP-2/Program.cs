@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Runtime.Intrinsics.X86;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Net.WebRequestMethods;
@@ -34,6 +36,16 @@ namespace G_NET_29_OOP_2
         //    *Enforces encapsulation
 
         #endregion
+
+        #region Q3:
+        //a)Indexer,allow an instance of  class to be accessed using array.
+        //- provides  clean and more intuitive way to manage internal collections or arrays.
+        //b)IndexOutOfRangeException:names has  fixed size of 5( 0 to 4), index 10 is out of bounds.
+        //*Make it safer :by adding Validation Logic inside the get and set.
+        //*if statement to check if the index is within the valid range.
+        //c)yes, through Overloading
+        //* It  useful in  PhoneBook class where we want to find an item by an integer ID(int index) OR by  name/ISBN(string key)
+    #endregion
 
 
 
