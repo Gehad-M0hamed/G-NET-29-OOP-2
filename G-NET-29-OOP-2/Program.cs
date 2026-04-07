@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Intrinsics.X86;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Net.WebRequestMethods;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace G_NET_29_OOP_2
@@ -21,6 +22,17 @@ namespace G_NET_29_OOP_2
         //c)  *Exposing fields directly means  object loses control over its data, allowing external code to set invalid values that could break the application.
         //    *It makes future changes difficult
         //    * Security:It violates the principle of (Data Hiding).
+        #endregion
+
+        #region Q2:
+        //Field:*Direct data storage
+        //      * No validation
+        //      * Breaks encapsulation
+        //Property:
+        //    *Controlled access
+        //    *Can validate
+        //    *Enforces encapsulation
+
         #endregion
 
 
