@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
+using System.Xml;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Net.WebRequestMethods;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -45,7 +46,16 @@ namespace G_NET_29_OOP_2
         //*if statement to check if the index is within the valid range.
         //c)yes, through Overloading
         //* It  useful in  PhoneBook class where we want to find an item by an integer ID(int index) OR by  name/ISBN(string key)
-    #endregion
+        #endregion
+
+        #region Q4:
+
+        //a)TotalOrders belongs to the Order class.
+        //*Item is a instance field, every new Order object has its own unique Item.
+        //*TotalOrders is a static field,there is only one copy in memory that all objects share to get the global count.
+        //b)No ,Static methods belong to the class the static method doesn't know "which" object's Item to access.
+        //#endregion
+
 
 
 
