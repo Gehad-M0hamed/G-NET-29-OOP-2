@@ -54,7 +54,8 @@ namespace G_NET_29_OOP_2
         //*Item is a instance field, every new Order object has its own unique Item.
         //*TotalOrders is a static field,there is only one copy in memory that all objects share to get the global count.
         //b)No ,Static methods belong to the class the static method doesn't know "which" object's Item to access.
-        //#endregion
+
+        #endregion
 
 
 
