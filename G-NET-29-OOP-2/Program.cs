@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Net.Sockets;
 using System.Runtime.Intrinsics.X86;
 using System.Xml;
 using static System.Net.Mime.MediaTypeNames;
@@ -57,6 +58,55 @@ namespace G_NET_29_OOP_2
 
         #endregion
 
+        #region Part 02:
+        
+        
+            static void Main()
+            {
+                Cinema myCinema = new Cinema();
+
+                for (int i = 1; i <= 3; i++)
+                {
+                    Console.WriteLine($"Enter data for Ticket {i}:");
+                    Console.Write("Movie Name: ");
+                    string name = Console.ReadLine();
+
+                    Console.Write("Ticket Type (0=Standard, 1=VIP, 2=IMAX): ");
+                    Common.TicketType type = (Common.TicketType)int.Parse(Console.ReadLine());
+
+                    Console.Write("Seat Row: ");
+                    char row = char.Parse(Console.ReadLine().ToUpper());
+
+                    Console.Write("Seat Number: ");
+                    int num = int.Parse(Console.ReadLine());
+
+                    Console.Write("Price: ");
+                    double price = double.Parse(Console.ReadLine());
+
+                    Ticket t = new Ticket(name, type, new Common.SeatLocation(row, num), price);
+                    myCinema.AddTicket(t);
+                }
+
+                Console.WriteLine("\nAll Tickets:");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (myCinema[i] != null) myCinema[i].PrintTicket();
+                }
+
+                Console.Write("\nEnter movie name to search: ");
+                string searchName = Console.ReadLine();
+                Ticket found = myCinema[searchName];
+                if (found != null) found.PrintTicket();
+                else Console.WriteLine("Not found.");
+
+                Console.WriteLine($"\nTotal Sold: {Ticket.GetTotalTicketsSold()}");
+                Console.WriteLine($"Ref 1: {BookingHelper.GenerateBookingReference()}");
+                Console.WriteLine($"Ref 2: {BookingHelper.GenerateBookingReference()}");
+                Console.WriteLine($"Group Price: {BookingHelper.CalcGroupDiscount(5, 80)}");
+            }
+        
+
+        #endregion
 
 
 
@@ -69,9 +119,7 @@ namespace G_NET_29_OOP_2
 
 
 
-        static void Main(string[] args)
-        {
-            
-        }
+
+
     }
 }
